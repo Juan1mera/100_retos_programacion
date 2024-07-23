@@ -6,25 +6,24 @@
 // - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 //------------------------------------------------------------------------------------------------------------------------------------------
 
-
-#include <iostream>
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     for (int i = 0; i < 101; i++) {
-        if(i%3==0 && i%5==0){
-            cout << "fizzbuzz" << endl;
+        if (i % 3 == 0 && i % 5 == 0) {
+            printf("fizzbuzz");
         }
-        else if(i % 3 == 0){
-            cout << "fizz" << endl;
+        else if (i % 3 == 0) {
+            printf("fizz");
         }
-        else if(i % 5 == 0) {
-            cout << "buzz" << endl;
+        else if (i % 5 == 0) {
+            printf("buzz");
         }
         else {
-            cout << i << endl;
+            printf("%d", i);
         }
+        printf("\n");
     }
-
     return 0;
 }

@@ -1,0 +1,71 @@
+<!--
+Escribe una función que reciba dos palabras (String) y retorne
+verdadero o falso (Bool) según sean o no anagramas.
+- Un Anagrama consiste en formar una palabra reordenando TODAS
+  las letras de otra palabra inicial.
+- NO hace falta comprobar que ambas palabras existan.
+- Dos palabras exactamente iguales no son anagrama.
+------------------------------------------------------------------------------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Exercise</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #2e2e2e;
+            color: #bfab93;
+            font-size: 40px;
+        }
+        .numero {
+            margin: -10px;
+            padding: -10px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecciona el cuerpo del documento o un contenedor específico
+        const body = document.querySelector('body');
+        
+        function son_anagramas(a, b) {
+            if (a === b) {
+                return false;
+            }
+    
+            // Si las palabras tienen diferentes longitudes, no pueden ser anagramas
+            if (a.length !== b.length) {
+                return false;
+            }
+    
+            // Convertir las palabras a arrays de caracteres
+            let array1 = a.split('');
+            let array2 = b.split('');
+    
+            // Ordenar los arrays de caracteres
+            array1.sort();
+            array2.sort();
+    
+            // Comparar los arrays ordenados
+            return array1.join('') === array2.join('');
+        }
+    
+        const nuevaFila = document.createElement('p');
+        nuevaFila.classList.add('numero');
+        
+        nuevaFila.textContent = son_anagramas('hello', 'roma') ? "true" : "false";
+        
+        // Añade el nuevo elemento al cuerpo del documento o a un contenedor específico
+        body.appendChild(nuevaFila);
+    });
+    </script>
+</html>
